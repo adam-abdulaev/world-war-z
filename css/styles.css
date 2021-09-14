@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css?family=Geo');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #222;
+    font-family: 'Geo', sans-serif;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    text-align: center;
+}
+
+canvas {
+    width: 350px;
+    height: 350px;
+}
+
+canvas, .controls-range {
+    display: block;
+    border: 2px solid #e0e0e0;
+}
+
+.controls-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls__btn {
+    font-size: 18px;
+    color: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    line-height: 32px;
+    border: 2px solid #e0e0e0;
+    text-align: center;
+    flex: 1;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.controls-range {
+    padding: 0 10px;
+}
+
+.controls-range input {
+    width: 100%;
+}
+
+.controls-range__title {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.controls-range__input {
+    padding: 10px 0;
+}
+
+.controls__btn:hover {
+    background-color: #e0e0e0;
+}
+
+.controls__btn_start:hover {
+    color: green;
+}
+
+.controls__btn_stop:hover {
+    color: red;
+}
+
+.controls__btn_reset:hover {
+    color: yellow;
+}
+
+.game-board {
+    position: relative;
+    border: 2px solid #e0e0e0;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.game-title {
+    color: #e0e0e0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .1;
+}
+
+.info-panel {
+    font-size: 16px;
+    font-family: 'Geo', sans-serif;
+    background: #e0e0e0;
+    color: #212121;
+    line-height: 24px;
+    padding: 0 8px;
+    cursor: default;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-panel__zombie {
+    color: green;
+}
+
+.info-panel__people {
+    color: red;
+}
+
+input[type=range] {
+    width: 100%;
+    margin: 5px 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: #222222;
+    border: 2px solid #e2e2e2;
+    border-radius: 1.3px;
+    width: 100%;
+    height: 15px;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    margin-top: -7px;
+    width: 15px;
+    height: 25px;
+    background: #222222;
+    border: 2px solid #e2e2e2;
+    border-radius: 2px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #222222;
+}
+
+input[type=range]::-moz-range-track {
+    background: #222222;
+    border: 2px solid #e2e2e2;
+    border-radius: 1.3px;
+    width: 100%;
+    height: 15px;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 15px;
+    height: 25px;
+    background: #222222;
+    border: 2px solid #e2e2e2;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 6px 0;
+    color: transparent;
+    width: 100%;
+    height: 15px;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #222222;
+    border: 2px solid #e2e2e2;
+    border-radius: 2.6px;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #222222;
+    border: 2px solid #e2e2e2;
+    border-radius: 2.6px;
+}
+
+input[type=range]::-ms-thumb {
+    width: 15px;
+    height: 25px;
+    background: #222222;
+    border: 2px solid #e2e2e2;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #222222;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #222222;
+}
+
+@supports (-ms-ime-align:auto) {
+    /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+    input[type=range] {
+        margin: 0;
+        /*Edge starts the margin from the thumb, not the track as other browsers do*/
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .game-board {
+        width: 80%;
+    }
+
+    main, canvas {
+        width: 100%;
+    }
+}
+
